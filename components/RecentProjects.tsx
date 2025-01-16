@@ -36,12 +36,12 @@ const RecentProjects = () => {
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base">
                 {item.title}
               </h1>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="lg:text-xl lg:font-normal font-light text-sm"
                 style={{
                   color: "#BEC1DD",
                   margin: "1vh 0",
@@ -67,9 +67,16 @@ const RecentProjects = () => {
 
                 <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+                    <a
+                      href={item.link} // Use the `link` property from the projects array
+                      target="_blank" // Open in a new tab
+                      rel="noopener noreferrer" // Security best practice for external links
+                      className="flex items-center lg:text-xl md:text-xs text-sm text-purple hover:underline"
+                    >
+                      <span>GitHub</span>
+                      <FaLocationArrow className="ms-3" color="#CBACF9" />
+                    </a>
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
               </div>
             </PinContainer>
